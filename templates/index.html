@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Pass/Fail Prediction</title>
+</head>
+<body>
+    <h1>Student Pass/Fail Prediction</h1>
+    <p>Enter student details to predict the result.</p>
+
+    <form action="/" method="POST">
+
+        <label>Study Hours:</label>
+        <input type="number" name="study_hours" step="any" required>
+        <br><br>
+
+        <label>Attendance (%):</label>
+        <input type="number" name="attendance" min="0" max="100" step="any" required>
+        <br><br>
+
+        <label>Previous Marks:</label>
+        <input type="number" name="previous_marks" step="any" required>
+        <br><br>
+
+        <label>Assignment Score:</label>
+        <input type="number" name="assignment_score" required>
+        <br><br>
+
+        <button type="submit">Predict Result</button>
+
+    </form>
+<!-- Display the prediction -->
+{% if prediction is defined %}
+    <div>
+        Predicted Result: {{ prediction }}
+    </div>
+{% endif %}
+</body>
+</html>
